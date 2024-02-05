@@ -1,0 +1,7 @@
+cd "C:\Program Files\Microsoft Data Migration Assistant\SqlAssessmentConsole"
+#PerfDataCollection
+SqlAssessment.exe PerfDataCollection --sqlConnectionStrings "Data Source=legacySQL2012;Initial Catalog=master;Integrated Security=True;" --outputFolder C:\Output
+
+#GetSkuRecommendation
+SqlAssessment.exe GetSkuRecommendation --OutputFolder C:\Output --targetPlatForm AzureSQLManagedInstance
+SqlAssessment.exe GetSkuRecommendation --OutputFolder C:\_SQLHACK_\LABS\01-Data_Migration\DMA_Sizing --targetPlatForm AzureSQLManagedInstance

@@ -1,0 +1,2 @@
+ServerName,Edition,HyperthreadRatio,IsClustered,IsHadrEnabled,LogicalCpuCount,MaxServerMemoryInUse,NumberCoresUsed,NumberOfUserDatabases,PhysicalCpuCount,ProductVersion,SqlStartTime,SumOfUserDatabasesSize,TempDbSize,NumOfLogins,TimeDataCollected
+LEGACYSQL2012,Enterprise Edition (64-bit),8,False,False,8,2147483647,8,60,1,10.50.6592.0,2021-11-15 10:28:12,38769,8,34,2021-11-15 12:02:10

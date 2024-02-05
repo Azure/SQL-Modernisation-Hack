@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SQLServer 1"
+  DTS:DTSID="{90E35F82-B702-49DD-8B41-86F4D65E3B95}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=demomihack02.a9b39c3422a8.database.windows.net;User ID=DemoUser;Initial Catalog=2008DW;Provider=SQLNCLI11.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAi6tzrEAomkGNHJTXPmnunAAAAAACAAAAAAAQZgAAAAEAACAAAAAc2q0vzHh/p94x4cUcUSEtQGeNIPEh+gIu7NU8BwG3hQAAAAAOgAAAAAIAACAAAADNi/AbvFLJWavna/LmL/shfEKswkHDa7ZIk9aASJjdAIAAAADUY2Q5+bdV0lc0170H5sUGn4Yb5SwTqPp4H6PqpeuhOF8VP3En+lM7DriN7dMCi7dIfpW6nc1ON2qSZJnCeDXSD7u2ocIoro8AQYY/rhW/l/ze0eOEtX75Hob3J53Q1qNO+CwkA8+9DQ09E5Mx3M+K6ZI9W3cnmTW6+uM4R6Dv6UAAAAArpPUth5lzWf4DEExbi44GXKI1IdRb3qqPpX84zOcFi7HEKlkyEGJvjuLvA2C++MzGTfmASn9eFZn2Z4xgEDqL</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

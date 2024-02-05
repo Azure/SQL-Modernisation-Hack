@@ -1,0 +1,2450 @@
+{
+  "Servers": [
+    {
+      "ServerName": "LEGACYSQL2012",
+      "TargetPlatform": "AzureSqlManagedInstance",
+      "Requirements": {
+        "CpuRequirementInCores": 3,36,
+        "DataStorageRequirementInMB": 0,00,
+        "LogStorageRequirementInMB": 1784,00,
+        "MemoryRequirementInMB": 9156,37,
+        "DataIOPSRequirement": 2886,73,
+        "LogIOPSRequirement": 123,87,
+        "IOLatencyRequirementInMs": 16,77,
+        "IOThroughputRequirementInMBps": 216,30,
+        "DataIOThroughputRequirementInMBps": 209,47,
+        "LogIOThroughputRequirementInMBps": 6,83,
+        "TempDBSizeInMB": 8,00,
+        "DataPointsStartTime": "0001-01-01T00:00:00",
+        "DataPointsEndTime": "9999-12-31T23:59:00",
+        "AggregationTargetPercentile": 95,
+        "PerfDataCollectionIntervalInSeconds": 30,
+        "SqlServerHostRequirements": {
+          "HostNICCount": 1
+        },
+        "DatabaseLevelRequirements": [
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM01_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM1.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM1.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM01_SharedMasterDataDB",
+            "MemoryRequirementInMB": 1,11,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM1.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM1.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 39,00
+          },
+          {
+            "CpuRequirementInCores": 3,36,
+            "DataIOPSRequirement": 334,13,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": 20,31,
+            "IOThroughputRequirementInMBps": 23,97,
+            "DataFileIOThroughputRequirementInMBps": 23,97,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM01_TenantDataDb",
+            "MemoryRequirementInMB": 1160,13,
+            "CpuRequirementInPercentageOfTotalInstance": 100,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM1.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 23,35,
+                "WriteLatencyInMs": 20,00,
+                "IOPSRequirement": 90,13,
+                "IOThroughputRequirementInMBps": 10,50,
+                "WriteRateRequirementInMBps": 7,33,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM1.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 6,75,
+                "WriteLatencyInMs": 19,89,
+                "IOPSRequirement": 244,00,
+                "IOThroughputRequirementInMBps": 13,47,
+                "WriteRateRequirementInMBps": 13,43,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 39,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM02_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM2.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM2.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM02_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM2.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM2.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 3,25,
+            "DataIOPSRequirement": 297,93,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": 19,92,
+            "IOThroughputRequirementInMBps": 20,57,
+            "DataFileIOThroughputRequirementInMBps": 20,57,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM02_TenantDataDb",
+            "MemoryRequirementInMB": 1018,02,
+            "CpuRequirementInPercentageOfTotalInstance": 96,76,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM2.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 22,83,
+                "WriteLatencyInMs": 19,25,
+                "IOPSRequirement": 78,40,
+                "IOThroughputRequirementInMBps": 8,70,
+                "WriteRateRequirementInMBps": 5,93,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM2.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 12,63,
+                "WriteLatencyInMs": 19,45,
+                "IOPSRequirement": 219,53,
+                "IOThroughputRequirementInMBps": 11,87,
+                "WriteRateRequirementInMBps": 11,83,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 39,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM03_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM3.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM3.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM03_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM3.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM3.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 2,26,
+            "DataIOPSRequirement": 358,40,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": 24,86,
+            "IOThroughputRequirementInMBps": 25,10,
+            "DataFileIOThroughputRequirementInMBps": 25,10,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM03_TenantDataDb",
+            "MemoryRequirementInMB": 1177,77,
+            "CpuRequirementInPercentageOfTotalInstance": 67,27,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM3.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 22,94,
+                "WriteLatencyInMs": 60,00,
+                "IOPSRequirement": 95,50,
+                "IOThroughputRequirementInMBps": 10,97,
+                "WriteRateRequirementInMBps": 7,67,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM3.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 29,75,
+                "WriteLatencyInMs": 20,49,
+                "IOPSRequirement": 262,90,
+                "IOThroughputRequirementInMBps": 14,13,
+                "WriteRateRequirementInMBps": 14,10,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 39,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM04_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM4.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM4.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM04_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM4.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM4.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 3,36,
+            "DataIOPSRequirement": 331,67,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": 19,97,
+            "IOThroughputRequirementInMBps": 23,80,
+            "DataFileIOThroughputRequirementInMBps": 23,80,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM04_TenantDataDb",
+            "MemoryRequirementInMB": 1098,26,
+            "CpuRequirementInPercentageOfTotalInstance": 100,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM4.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 22,16,
+                "WriteLatencyInMs": 22,67,
+                "IOPSRequirement": 92,17,
+                "IOThroughputRequirementInMBps": 10,67,
+                "WriteRateRequirementInMBps": 7,60,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM4.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 5,25,
+                "WriteLatencyInMs": 19,32,
+                "IOPSRequirement": 239,50,
+                "IOThroughputRequirementInMBps": 13,13,
+                "WriteRateRequirementInMBps": 13,10,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 39,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM05_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM5.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM5.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM05_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM5.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM5.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 3,36,
+            "DataIOPSRequirement": 468,50,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": 20,28,
+            "IOThroughputRequirementInMBps": 34,27,
+            "DataFileIOThroughputRequirementInMBps": 34,27,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM05_TenantDataDb",
+            "MemoryRequirementInMB": 1319,36,
+            "CpuRequirementInPercentageOfTotalInstance": 100,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM5.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 23,50,
+                "WriteLatencyInMs": 19,25,
+                "IOPSRequirement": 129,80,
+                "IOThroughputRequirementInMBps": 15,67,
+                "WriteRateRequirementInMBps": 11,30,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM5.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 4,88,
+                "WriteLatencyInMs": 19,88,
+                "IOPSRequirement": 338,70,
+                "IOThroughputRequirementInMBps": 18,60,
+                "WriteRateRequirementInMBps": 18,57,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 39,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM06_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM6.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM6.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM06_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM6.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM6.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 3,21,
+            "DataIOPSRequirement": 312,10,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": 21,03,
+            "IOThroughputRequirementInMBps": 22,40,
+            "DataFileIOThroughputRequirementInMBps": 22,40,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM06_TenantDataDb",
+            "MemoryRequirementInMB": 1017,87,
+            "CpuRequirementInPercentageOfTotalInstance": 95,56,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM6.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 23,96,
+                "WriteLatencyInMs": 23,50,
+                "IOPSRequirement": 85,17,
+                "IOThroughputRequirementInMBps": 10,07,
+                "WriteRateRequirementInMBps": 7,20,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM6.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 1,44,
+                "WriteLatencyInMs": 20,38,
+                "IOPSRequirement": 226,93,
+                "IOThroughputRequirementInMBps": 12,33,
+                "WriteRateRequirementInMBps": 12,30,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 35,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM07_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM7.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM7.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM07_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM7.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM7.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 1,45,
+            "DataIOPSRequirement": 325,07,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": 17,63,
+            "IOThroughputRequirementInMBps": 26,27,
+            "DataFileIOThroughputRequirementInMBps": 26,27,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM07_TenantDataDb",
+            "MemoryRequirementInMB": 1009,44,
+            "CpuRequirementInPercentageOfTotalInstance": 43,01,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM7.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 20,72,
+                "WriteLatencyInMs": 19,07,
+                "IOPSRequirement": 103,27,
+                "IOThroughputRequirementInMBps": 14,37,
+                "WriteRateRequirementInMBps": 11,60,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM7.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 2,31,
+                "WriteLatencyInMs": 16,82,
+                "IOPSRequirement": 221,80,
+                "IOThroughputRequirementInMBps": 11,90,
+                "WriteRateRequirementInMBps": 11,87,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 34,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM08_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM8.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM8.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM08_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM8.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM8.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 3,36,
+            "DataIOPSRequirement": 206,43,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": 22,75,
+            "IOThroughputRequirementInMBps": 13,57,
+            "DataFileIOThroughputRequirementInMBps": 13,57,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM08_TenantDataDb",
+            "MemoryRequirementInMB": 478,32,
+            "CpuRequirementInPercentageOfTotalInstance": 100,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM8.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 22,95,
+                "WriteLatencyInMs": 33,00,
+                "IOPSRequirement": 50,00,
+                "IOThroughputRequirementInMBps": 5,07,
+                "WriteRateRequirementInMBps": 3,07,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM8.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 8,00,
+                "WriteLatencyInMs": 22,03,
+                "IOPSRequirement": 156,43,
+                "IOThroughputRequirementInMBps": 8,50,
+                "WriteRateRequirementInMBps": 8,47,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 29,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM09_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM9.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM9.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM09_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM9.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM9.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 1,15,
+            "DataIOPSRequirement": 42,40,
+            "LogIOPSRequirement": 123,87,
+            "IOLatencyRequirementInMs": 44,38,
+            "IOThroughputRequirementInMBps": 11,27,
+            "DataFileIOThroughputRequirementInMBps": 4,43,
+            "LogFileIOThroughputRequirementInMBps": 6,83,
+            "LogWriteRateInMBPerSecRequirement": 6,80,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1744,00,
+            "DatabaseName": "TEAM09_TenantDataDb",
+            "MemoryRequirementInMB": 384,37,
+            "CpuRequirementInPercentageOfTotalInstance": 34,32,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM9.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 26,09,
+                "WriteLatencyInMs": 85,00,
+                "IOPSRequirement": 42,40,
+                "IOThroughputRequirementInMBps": 4,43,
+                "WriteRateRequirementInMBps": 2,83,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM9.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1744,00,
+                "ReadLatencyInMs": 4,75,
+                "WriteLatencyInMs": 25,52,
+                "IOPSRequirement": 123,87,
+                "IOThroughputRequirementInMBps": 6,83,
+                "WriteRateRequirementInMBps": 6,80,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 28,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM10_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM10.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM10.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM10_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM10.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM10.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 1,45,
+            "DataIOPSRequirement": 210,10,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": 23,39,
+            "IOThroughputRequirementInMBps": 15,10,
+            "DataFileIOThroughputRequirementInMBps": 15,10,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM10_TenantDataDb",
+            "MemoryRequirementInMB": 463,58,
+            "CpuRequirementInPercentageOfTotalInstance": 43,17,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM10.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 20,21,
+                "WriteLatencyInMs": 59,00,
+                "IOPSRequirement": 58,10,
+                "IOThroughputRequirementInMBps": 6,83,
+                "WriteRateRequirementInMBps": 4,90,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM10.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 1,17,
+                "WriteLatencyInMs": 19,23,
+                "IOPSRequirement": 152,00,
+                "IOThroughputRequirementInMBps": 8,27,
+                "WriteRateRequirementInMBps": 8,23,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 28,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM11_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM11.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM11.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM11_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM11.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM11.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM11_TenantDataDb",
+            "MemoryRequirementInMB": 0,63,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM11.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM11.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM12_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM12.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM12.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM12_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM12.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM12.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM12_TenantDataDb",
+            "MemoryRequirementInMB": 0,63,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM12.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM12.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM13_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM13.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM13.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM13_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM13.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM13.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM13_TenantDataDb",
+            "MemoryRequirementInMB": 0,63,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM13.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM13.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM14_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM14.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM14.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM14_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM14.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM14.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM14_TenantDataDb",
+            "MemoryRequirementInMB": 0,63,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM14.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM14.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM15_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM15.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM15.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM15_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM15.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM15.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM15_TenantDataDb",
+            "MemoryRequirementInMB": 0,63,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM15.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM15.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM16_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM16.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM16.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM16_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM16.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM16.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM16_TenantDataDb",
+            "MemoryRequirementInMB": 0,63,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM16.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM16.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM17_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM17.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM17.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM17_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM17.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM17.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM17_TenantDataDb",
+            "MemoryRequirementInMB": 0,63,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM17.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM17.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM18_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM18.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM18.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM18_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM18.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM18.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM18_TenantDataDb",
+            "MemoryRequirementInMB": 0,63,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM18.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM18.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM19_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM19.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM19.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM19_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM19.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM19.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM19_TenantDataDb",
+            "MemoryRequirementInMB": 0,63,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM19.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM19.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM20_LocalMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM20.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\LocalMasterDataDB_TEAM20.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 1,00,
+            "DatabaseName": "TEAM20_SharedMasterDataDB",
+            "MemoryRequirementInMB": 0,56,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM20.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\SharedMasterDataDB_TEAM20.ldf",
+                "FileType": "Log",
+                "SizeInMB": 1,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          },
+          {
+            "CpuRequirementInCores": 0,00,
+            "DataIOPSRequirement": 0,00,
+            "LogIOPSRequirement": 0,00,
+            "IOLatencyRequirementInMs": NaN,
+            "IOThroughputRequirementInMBps": 0,00,
+            "DataFileIOThroughputRequirementInMBps": 0,00,
+            "LogFileIOThroughputRequirementInMBps": 0,00,
+            "LogWriteRateInMBPerSecRequirement": 0,00,
+            "DataStorageRequirementInMB": 0,00,
+            "LogStorageRequirementInMB": 0,00,
+            "DatabaseName": "TEAM20_TenantDataDb",
+            "MemoryRequirementInMB": 0,63,
+            "CpuRequirementInPercentageOfTotalInstance": 0,00,
+            "FileLevelRequirements": [
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM20.mdf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              },
+              {
+                "FileName": "C:\\Data\\TenantDataDb_TEAM20.ldf",
+                "FileType": "Rows",
+                "SizeInMB": 0,00,
+                "ReadLatencyInMs": 0,00,
+                "WriteLatencyInMs": 0,00,
+                "IOPSRequirement": 0,00,
+                "IOThroughputRequirementInMBps": 0,00,
+                "WriteRateRequirementInMBps": 0,00,
+                "NumberOfDataPointsAnalyzed": 114,00
+              }
+            ],
+            "NumberOfDataPointsAnalyzed": 20,00
+          }
+        ],
+        "NumberOfDataPointsAnalyzed": 60,00
+      },
+      "Recommendations": [
+        {
+          "RecommendedSku": {
+            "Platform": "Azure SQL Managed Instance",
+            "HardwareGeneration": "Gen5",
+            "ServiceTier": "GeneralPurpose",
+            "SizeInVCores": 4,
+            "StorageSizeInGb": 32,00
+          },
+          "Justifications": [
+            "According to the performance data collected, we estimate that your instance has a compute requirement of 3,36 vCores. Based on other factors, including memory, storage, and IO, this is the smallest compute sizing that will satisfy all of your requirements.",
+            "This instance requires 8,94 GB of memory, which can be satisfied by this SKU's maximum of 20,40 GB.",
+            "This instance requires 0,00 GB of storage for data files, and 1,74 GB of storage for log files. We recommend provisioning at least 32 GB of data storage, which is the nearest valid amount that can be provisioned which would include sufficient log storage. Storage for this SKU is provisioned in increments of 32 GB, up to 2048 GB.",
+            "This instance requires 16,77 milliseconds of IO latency, which is within the General Purpose service tier's threshold of 5 milliseconds.",
+            "This instance requires 3 011 IOPS for data and log files. Based on your current file sizes, this SKU can achieve 987 500 IOPS if you migrate as-is. You might improve IO performance by increasing file sizes. For more information, visit https://docs.microsoft.com/en-us/azure/azure-sql/managed-instance/resource-limits."
+          ]
+        }
+      ]
+    }
+  ],
+  "TimeCreated": "2023-09-18T06:47:51.9067198Z"
+}
