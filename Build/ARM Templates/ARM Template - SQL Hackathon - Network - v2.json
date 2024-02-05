@@ -1,0 +1,151 @@
+{
+
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+
+    "contentVersion": "1.0.0.0",
+
+    "variables": {
+        "location": "[resourceGroup().location]",
+        "virtualNetworkName": "[concat(resourceGroup().name, '-vnet')]",
+        "storageAccountName": "[concat('sqlhacksa', uniqueString(resourceGroup().id))]",
+        "uniquevaluerg":"[uniqueString(resourceGroup().id)]",
+        "addressPrefix": "10.0.0.0/16",
+        "MIsubnetName": "ManagedInstance",
+        "MIsubnetPrefix": "10.0.1.0/24",
+        "GatewaySubnetName": "GatewaySubnet",
+        "GatewaySubnetPrefix": "10.0.0.0/24",
+        "ManagementSubnetName": "Management",
+        "ManagementSubnetPrefix": "10.0.2.0/24",
+        "TeamVMSubnetName": "TeamJumpServers",
+        "TeamVMSubnetPrefix": "10.0.3.0/24",
+        "BastionSubnetName": "AzureBastionSubnet",
+        "BastionSubnetPrefix":"10.0.4.0/24"
+    },
+    "outputs": {
+        "UniqueRgValue": {
+          "type": "string",
+          "value": "[variables('uniquevaluerg')]"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-04-01",
+            "name": "[variables('storageAccountName')]",
+            "location": "[variables('location')]",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true,
+                "minimumTlsVersion": "TLS1_0",
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+            }
+        },
+        {
+
+            "name": "[variables('virtualNetworkName')]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2019-04-01",
+            "location": "[variables('location')]",
+            "dependsOn": [],
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[variables('addressPrefix')]"
+                    ]
+                },
+                "subnets": [
+
+                    {
+                        "name": "[variables('gatewaySubnetName')]",
+                        "properties": {
+                            "addressPrefix": "[variables('gatewaySubnetPrefix')]"
+                        }
+                    },
+                    {
+                        "name": "[variables('MIsubnetName')]",
+                        "properties": {
+                            "addressPrefix": "[variables('MIsubnetPrefix')]"
+                        }
+                    },
+                    {
+                        "name": "[variables('managementSubnetName')]",
+                        "properties": {
+                            "addressPrefix": "[variables('managementSubnetPrefix')]"
+                        }
+                    },
+                    {
+                        "name": "[variables('TeamVMSubnetName')]",
+                        "properties": {
+                            "addressPrefix": "[variables('TeamVMSubnetPrefix')]"
+                        }
+                    },
+                    {
+                        "name": "[variables('BastionSubnetName')]",
+                        "properties": {
+                            "addressPrefix": "[variables('BastionSubnetPrefix')]"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2020-11-01",
+            "name": "BastionPublicIP",
+            "location": "[variables('location')]",
+            "sku": {
+                "name": "Standard"
+            },
+            "properties": {
+                "publicIPAllocationMethod": "Static"
+            }
+        },
+        {
+            "apiVersion": "2020-07-01",
+            "type": "Microsoft.Network/bastionHosts",
+            "name": "TEAM_VMs-BA",
+            "location": "[variables('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIpAddresses', 'BastionPublicIP')]",
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]"
+               
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "IpConf",
+                        "properties": {
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('BastionSubnetName'))]"
+                            },
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIpAddresses', 'BastionPublicIP')]"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
