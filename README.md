@@ -1,7 +1,16 @@
 # SQL Server Modernisation Hack #
+This hackathon is a repetable IP and can be used during the Execution Phase of VBD: Proof of Concept for Migrating your Data Estate to Azure SQL
 
-Awesome Trading inc. is an online trading company. Founded in 2012, the company has experience exponential growth since releasing its online trading platform. As part of their monitoring of ongoing trades, the company uses a legacy Application called the “Online Transaction Monitor”, which was originally written in VB6 and developed against a SQL Server 2012 Databases.
-Awesome Trading have started to find that the management of the SQL Server 2012 database is becoming too much to manage with the current support staff, and would like to reduce this burden on their support teams. As their service has also increased in popularity, the Stand-alone SQL server this database currently uses does not meet the 99.99% SLA for availability required, and they would prefer to use supported Windows and OS versions.
+![VBD: Proof of Concept for Migrating your Data Estate to Azure SQL](https://chrysalis.microsoft.com/Projects/993 "VBD: Proof of Concept for Migrating your Data Estate to Azure SQL")
+
+
+## Purpose of the Hackathon / Hands-on labs ##
+In these hands-on labs, you will implement a proof-of-concept (PoC) for migrating an on-premises SQL Server 2012 or SQL Server 2016 database into Azure SQL Database Managed Instance (SQL MI). You will perform assessments to reveal any feature parity and compatibility issues between the on-premises SQL Server database and the managed database offerings in Azure. You will then migrate the customer's on-premises databases into Azure, using migration services. Additionally, you will migrate SSIS packages from on premise into Azure PaaS Services. Finally, you will enable some of the advanced SQL features available in SQL MI to improve security and performance in the customer's application.
+At the end of this hands-on lab, you will be better able to implement a cloud migration solution for business-critical applications and databases. Other than Lab 1 (Migration), all other Labs are optional to be delivered. For an offline migration scenario, you will be able to use Azure Data Studio based migration and for an online migration scenario, you will optionally be able to use SQL MI Link for the migration.  
+
+# Use Case #
+Awesome Trading inc. is an online trading company. Founded in 2012, the company has experience exponential growth since releasing its online trading platform. As part of their monitoring of ongoing trades, the company uses a legacy Application called the “Online Transaction Monitor”, which was originally written in VB6 and developed against a SQL Server 2012 and 2016 Databases.
+Awesome Trading have started to find that the management of the SQL Server database is becoming too much to manage with the current support staff, and would like to reduce this burden on their support teams. As their service has also increased in popularity, the Stand-alone SQL server this database currently uses does not meet the 99.99% SLA for availability required, and they would prefer to use supported Windows and OS versions.
 
 Awesome Trading would like to run a Proof of Concept (PoC) the “Online Transaction Monitor” and using PaaS Data Services in Azure. As the Trading platform is only used during business hours, Awesome Trading are happy for the PoC to be migrated with downtime over a weekend. However, there is a complication in that Awesome Trading do not have the latest up to date source code for this application, so the only thing that can be changed is the connection strings for this application. There is also a set of SSIS packages that feed a Datawarehouse that need to be factored. Additionally databases contain sensitive data, these  will need to be marked and encrypted during the migration and any other vulnerabilities assessed and resolved.
 
@@ -13,9 +22,6 @@ Up to 20 Teams of:
 * SQL/Database developers
 * Application developers
 
-## Hands-on labs ##
-In these hands-on labs, you will implement a proof-of-concept (PoC) for migrating an on-premises SQL Server 2012 database into Azure SQL Database Managed Instance (SQL MI). You will perform assessments to reveal any feature parity and compatibility issues between the on-premises SQL Server 2012 database and the managed database offerings in Azure. You will then migrate the customer's on-premises databases into Azure, using migration services. Additionally, you will migrate SSIS packages from on premise into Azure PaaS Services. Finally, you will enable some of the advanced SQL features available in SQL MI to improve security and performance in the customer's application.
-At the end of this hands-on lab, you will be better able to implement a cloud migration solution for business-critical applications and databases.
 
 ## Lab Architecture ##
 
@@ -31,6 +37,7 @@ The following diagram provides an overview of the Lab environment that will be b
 * Azure SQL Database Managed Instance (SQL MI)
 * Azure SQL Database (SQL DB)
 * Azure Database Migration Service (DMS)
+* Azure Data Studio
 * Microsoft Data Migration Assistant (DMA)
 * SQL Server 2012
 * SQL Server 2016
@@ -52,7 +59,7 @@ The following diagram provides an overview of the Lab environment that will be b
 To install please complete the following:
 1. Go to the BUILD folder and download the ARM Deployment - SQL Hackathon v2.ps1 powershell script.
 2. Within Powershell ISE or VSCode - load the ARM Deployment - SQL Hackathon v2.ps1
-3. Execute the ARM Deployment - SQL Hackathon v2.ps1 script, following the on screen prompts (Note only select 1 TEAM VM when prompted)
+3. Execute the ARM Deployment - SQL Hackathon v2.ps1 script, following the on screen prompts
 
 
 ## Known Issues ##
