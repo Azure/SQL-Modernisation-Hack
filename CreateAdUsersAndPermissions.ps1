@@ -15,7 +15,7 @@ if(!$group)
 $group= New-AzADGroup -DisplayName $user_group -MailNickname $user_group
 }
 $username="sqlhackuser"
-$domain="1dayopenhack.biz"
+$domain="M365x90478194.onmicrosoft.com"
 
 $count=1..25
 
@@ -60,7 +60,7 @@ New-AzRoleAssignment -ObjectId $groupid -RoleDefinitionName Contributor -Scope (
 
 
 # assign contributor on DMS (classic)
-New-AzRoleAssignment -ObjectId $groupid -RoleDefinitionName Contributor -Scope (Get-AzResource -Name sqlhack-migrationservice).ResourceId
+#New-AzRoleAssignment -ObjectId $groupid -RoleDefinitionName Contributor -Scope (Get-AzResource -Name sqlhack-migrationservice).ResourceId
 
 # assign contributor on DMS (new)
 New-AzRoleAssignment -ObjectId $groupid -RoleDefinitionName Contributor -Scope (Get-AzResource -Name sqlhack-dmsV2).ResourceId
