@@ -1,5 +1,5 @@
 # SQL Server Modernisation Hack #
-This hackathon is a repetable IP and can be used during the Execution Phase of [VBD: Proof of Concept for Migrating your Data Estate to Azure SQL][https://chrysalis.microsoft.com/Projects/993]
+This hackathon is a repetable IP and can be used during the Execution Phase of [VBD: Proof of Concept for Migrating your Data Estate to Azure SQL]: https://chrysalis.microsoft.com/Projects/993
 
 
 
