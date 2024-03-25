@@ -31,6 +31,8 @@ The following diagram provides an overview of the Lab environment that will be b
 
 ![SQL Hack Architecture](https://github.com/markjones-msft/SQL-Hackathon/raw/master/Hands-On%20Lab/SQLHack%20Architecture.png "SQL Hack Architecture")
 
+![SQL Hack Architecture](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/HackArchitecture.jpg "SQL Hack Architecture")
+
 ***NOTE: There are up to 20 workshop environments using a SHARED source SQL Server and Target Azure SQL Database. Please be respectful of only migrating your teams Databases and Logins.***
 
 ## Azure services and related products ##
@@ -92,10 +94,7 @@ However if it is delivered as a customer funded VBD, the total duration ofthe wh
 If it is delivered as a MSFT funded VBD, then total time booked by all CSA's is allowed to exceed the total duration of the VBD. (i.e both coaches are allowed to register 3 full days and the total booking time is 6 days, although the duration of the VBD is 3 days.) 
 If you have further questions please reach out to Mert Senguner or Dhnaeshwari, so that we can provide different sample ROSS's where this has been the case. 
 
-
-
-
-how I contacted RC's.
+how to contact RC's.
 
 
 ## Known Issues ##
