@@ -29,9 +29,7 @@ The following diagram provides an overview of the Lab environment that will be b
 
 **This architecture is designed for a classroom environment of up to 20 teams within a single subscription.**
 
-![SQL Hack Architecture](https://github.com/markjones-msft/SQL-Hackathon/raw/master/Hands-On%20Lab/SQLHack%20Architecture.png "SQL Hack Architecture")
-
-![SQL Hack Architecture](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/HackArchitecture.jpg "SQL Hack Architecture")
+![SQL Hack Architecture](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/HackathonArchitecture.jpg "SQL Hack Architecture")
 
 ***NOTE: There are up to 20 workshop environments using a SHARED source SQL Server and Target Azure SQL Database. Please be respectful of only migrating your teams Databases and Logins.***
 
