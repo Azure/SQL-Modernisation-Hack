@@ -11,7 +11,7 @@ Full list of the Labs are as follows:
 1.  **Lab 1a:**  Offline Migration with Azure Data Studio / **Lab 1b**: Online Migration with SQL MI Link
 2.  **Lab 2 :**  Monitoring and Performance on SQL Managed Instance
 3.  **Lab 3 :**  Security on SQL Managed Instance
-4.  **Lab 4 :**  SSIS Migration 
+4.  **Lab 4 :**  SSIS Migration  
 
 
 Except for Lab 1, all other labs are optional for the delivery and independent from each other. In an offline migration scenario, you can utilize Azure Data Studio for migration which is Lab 1a. For an online migration scenario, you have the optional choice of using SQL MI Link for the migration, Lab 1b. 
