@@ -46,7 +46,7 @@ In order to deliver this hackathon, you can apply for a One-Time PASS subscripti
 
 ***NOTE: There are up to 20 workshop environments using a SHARED source SQL Server and Target SQL Managed Instance. The attendees should be respectful of only migrating their teams Databases and Logins.***
 
-## Azure services and related products ##
+## Azure services and related products used in the Hackathon ##
 * Azure SQL  Managed Instance (SQL MI)
 * Azure SQL Database (SQL DB)
 * Azure Database Migration Service (DMS)
@@ -65,7 +65,64 @@ In order to deliver this hackathon, you can apply for a One-Time PASS subscripti
 * Azure Data Factory
 * Integration Runtime SSIS
 
-## How To Request for One-Time PASS Subscription and a Contoso Tenant for the delivery ##
+
+## Step-By-Step Guide For Delivery ##
+- **Position the VBD** at your account and follow the necessary steps on ESXP as you would do for any other delivery. Details regarding time booking and best practices for the delivery have been given in the FaQ section below.
+
+- **Identify a peer CSA** who will act as the second coach.
+
+- **Decide on what modules / labs of the repetable IP should be delivered**. Each Lab takes ~2 hours, incl. the theoretical part in the beginning. Here are the labs / modules you can combine and deliver:
+
+    ->Overview of Azure SQL & Modernization - Migration paths​ (This is the Intro and cannot be skipped)
+
+    ->Assessing & Migrating SQL Server databases to Azure SQL : **Lab 1** ( You need to choose between Lab 1a *Offline migration* or Lab 1b *Online Migration over MI Link.* Lab1 cannot be skipped.)
+
+    ->Administering & Monitoring & Perf. Optimization Azure SQL MI​: **Lab 2**
+    
+    ->Securing Azure SQL Managed Instance: **Lab 3**
+
+    ->SSIS Migration: **Lab 4**
+
+
+- **Identify the subscription** where the Hackathon resources will be installed. 
+If you cannot use the customer's subscription, **apply for the One-Time PASS Subscription and create a Contoso tenant for the delivery** (Instructions are given in the below section "How To Request for One-Time PASS Subscription and Create a Contoso Tenant for the delivery")
+If you are allowed to use a customer subscription, you need to make sure that all access rights are granted on the customer's platform. Or you need to organize a provisioning session with a customer contact to provision the resources together.  
+
+- **Provision the environment** at least 4-5 days before the delivery.
+ There is a [detailed description for the provisioning](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/Hack%20Environment%20-%20Setup%20and%20Reset%20MASTER.docx) among the repo. documents. Basically you will be taking those steps with the order, when you follow the instructions in the document: 
+
+    ->Go to the BUILD folder and download the ARM Deployment - SQL Hackathon v2.ps1 powershell script 
+    
+    ->Within Powershell ISE or VSCode - load the ARM Deployment - SQL Hackathon v2.ps1
+
+    ->Execute the ARM Deployment - SQL Hackathon v2.ps1 script, following the on screen prompts
+    
+    ->Run the Post Provisioning Scripts and the Post Provisioning Tasks as described in the document (i.e [detailed description for the provisioning](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/Hack%20Environment%20-%20Setup%20and%20Reset%20MASTER.docx) )
+
+    ->Automatically create users and grant permissions by running the CreateAdUsersAndPermissions.ps1 that is in the BUILD folder.
+
+- **Make a Dry Run** for each Lab you want to deliver at least 2 days before the actual delivery
+    
+- **Synch. with your CSA peer** before the delivery
+
+- **Deliver the hackathon**.  You can use the [presentation](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/Presentations/FY24_Azure%20SQL%20Modernization%20Hackathon.pptx) as a reference and a good starting point. All instructions are for the Labs are already given in the Lab docs uploaded to User VM's.  
+
+- **Clean-up resources** as described in the [detailed description for the provisioning](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/Hack%20Environment%20-%20Setup%20and%20Reset%20MASTER.docx)
+
+ 
+ ***NOTE This repository will install a number of components within the designated subscription at an estimated cost of around $25 per day***
+
+ If you use a PASS subscription for the delviery and encounter any quota limitations in the PASS subscription for the resources you need to provision, you can raise these quotas automatically with a ticket from within the Azure Portal under "Help + Support". This usally takes a couple of minutes and runs in the self-service mode. 
+
+ (For any questions regarding provisioning and preparation you can reach out to [the owners of this IP](https://chrysalis.microsoft.com/assets/2155/))  
+
+
+
+## How To Request for One-Time PASS Subscription and Create a Contoso Tenant for the delivery ##
+
+If you cannot / don't prefer to use the customer's subscription for the delivery you need another tenant and a PASS subscription. To get this: 
+
+
 1.Go to one-time PASS Request Page -> [Microsoft Azure Pass Requests](https://requests.microsoftazurepass.com/OneTime/Request)
 
 2.Fill in the forms with the details (like PC 'Profit Center' Code, PC Program Approver Alias, Finance contract, etc. which are mandartory fields. Reach out to your finance contact in your region if you don't know these details. If you see any changes later on the input fields of the form or if you face rejection after your request: 
@@ -79,17 +136,20 @@ In order to deliver this hackathon, you can apply for a One-Time PASS subscripti
 5.Check your balance on [Microsoft Azure Sponsorships | Balance](https://www.microsoftazuresponsorships.com/Balance) from time to time in that you sign in with the admin and pass from the tenant created in the 3rd step.
 
 
-## Instructions to Provision the Environment  ##
+## Potential Value of this Repetable IP ##
 
-***NOTE This repository will install a number of components within the designated subscription at an estimated cost of around $25 per day***
+->Custom package selection is possible which is providing a jump-start to Azure SQL (4x2 Hour Packages can be combined for the delivery.)
 
-To install please complete the following:
-1. Go to the BUILD folder and download the ARM Deployment - SQL Hackathon v2.ps1 powershell script
-2. Within Powershell ISE or VSCode - load the ARM Deployment - SQL Hackathon v2.ps1
-3. Execute the ARM Deployment - SQL Hackathon v2.ps1 script, following the on screen prompts
-4. There is a [detailed description for the provisioning](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/Hack%20Environment%20-%20Setup%20and%20Reset%20MASTER.docx) in the repo. documents, as well.
+->This IP offers a Step-by-step guide for 4 Labs with a story behind -> Migrate - optimize -administer- protect
 
-(For any questions regarding provisioning you can reach out to [the owners of this IP](https://chrysalis.microsoft.com/assets/2155/))  
+
+->Every CSA can reproduce a guided workshop / hackathon with the same quality.
+
+->Comprehensive provisioning scripts with all resources, labs and instructions ensure the reusability and repetability.
+
+
+->When deployed directly to customer’s subscription, the whole lab environment generates instant consumption (alternatively you can use a PASS subscription.)
+
 
 
  ## FaQ ##
@@ -117,7 +177,7 @@ If there are questions or comprehensive, individuall help is necessary, one coac
 
 ***Q*** : Is this IP/VBD a customer funded or a MSFT funded VBD ? 
 
-***A*** : This IP/VBD can both be delivered in a MSFT or a customer funded way. This is a decision of the account team and the CSA manager, simply as any other VBD.
+***A*** : This IP/VBD can both be delivered in a MSFT or a customer funded way. This is a decision of the account team and the CSA manager, simply as for any other VBD.
 
 ***Q*** : How does it work with time booking when I want to deliver this VBD over this IP? 
 
@@ -125,4 +185,4 @@ If there are questions or comprehensive, individuall help is necessary, one coac
 If you have further questions please reach out to Mert Senguner or Dhaneshwari Kumari, so that they can provide sample ROSS's confirmed by the Resource Coordinatators before. 
 
 ## Known Issues ##
-The screens for Azure services on the portal and on the extensions on Azure Data Studio are constantly changing. We try to maintain these changes as soon as possible, however it is sometimes impossible to keep each and every detail 100% up-to-date. For the occasions where there is a devaition from the lab docs, the CSA's / coaches should be prepared. So the best and easist way to overcome these kind of situations is to do Dry-Runs, a couple of days before the delivery.     
+The screens for Azure services on the portal and on the extensions on Azure Data Studio are rapidly changing with new updates and features. We try to maintain these changes as soon as possible, however it is sometimes impossible to keep each and every detail 100% up-to-date. For the occasions where there is a devaition from the lab docs, the CSA's / coaches should be prepared. So the best and easist way to overcome these kind of situations is to do Dry-Runs, a couple of days before the delivery.     
