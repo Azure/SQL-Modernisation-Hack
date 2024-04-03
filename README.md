@@ -1,6 +1,6 @@
 # SQL Server Modernisation Hackathon #
 This hackathon is [a repetable IP listed in Chrysalis](https://chrysalis.microsoft.com/assets/2155/) and can be used during the Execution Phase of the [VBD: Proof of Concept for Migrating your Data Estate to Azure SQL](https://chrysalis.microsoft.com/Projects/993 "VBD: Proof of Concept for Migrating your Data Estate to Azure SQL").
-Please refer to the “Instructions to Provision the Environment” located at the bottom of the page to deliver this IP.
+Please refer to the “Step-By-Step Guide For Delivery” located at the bottom of the page to deliver this IP.
 
 ## Purpose of the Hackathon / Hands-on labs ##
 In these hands-on labs, the attendees will implement a proof-of-concept (PoC) for migrating an on-premises SQL Server 2012 or SQL Server 2016 database into Azure SQL Database Managed Instance (SQL MI). They will perform assessments to reveal any feature parity and compatibility issues between the on-premises SQL Server database and the managed database offerings in Azure. You will then migrate the customer's on-premises databases into Azure, using migration services. Optionally, attendees will migrate SSIS packages from on premise into Azure PaaS Services. Finally, they will enable some of the advanced SQL features available in SQL MI to improve security and performance in the customer's application.
