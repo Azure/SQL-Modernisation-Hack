@@ -31,19 +31,13 @@ foreach ($i in $count)
     Add-AzADGroupMember -TargetGroupObjectId $groupid -MemberObjectId $member.Id
      
     }
-# Create SQL MI Admin
-    $username ="sqlmiadmin"
-    $password = "Foso2272#OH2903"
-    $securepassword= ConvertTo-SecureString $password -AsPlainText -force
-    $upn=$username+"@"+$domain
-    $member=New-AzADUser -DisplayName $username$i_string  -Password $securepassword  -AccountEnabled $true -MailNickname $username$i_string  -UserPrincipalName $upn
 
-
-    $username ="adminuser"
-    $password = "#SQLm2cAdmin@oh!!"
-    $securepassword= ConvertTo-SecureString $password -AsPlainText -force
-    $upn=$username+"@"+$domain
-    $member=New-AzADUser -DisplayName $username$i_string  -Password $securepassword  -AccountEnabled $true -MailNickname $username$i_string  -UserPrincipalName $upn
+# Create AdminUser (RUN THIS PART IF YOU ONLY NEED AN ADDITIONAL  ADMIN USER FOR MULTIPLE COACHES)
+    # $username ="adminuser"  (RUN THIS PART IF YOU ONLY NEED AN ADDITIONAL SQL MI ADMIN USER FOR MULTIPLE COACHES)
+    # $password = <TYPE YOUR PASSWORD HERE BEFORE YOU RUN THE CODE IN YOUR SUBSCRIPTION >
+    # $securepassword= ConvertTo-SecureString $password -AsPlainText -force
+    # $upn=$username+"@"+$domain
+    # $member=New-AzADUser -DisplayName $username$i_string  -Password $securepassword  -AccountEnabled $true -MailNickname $username$i_string  -UserPrincipalName $upn
 
 #Get-AzRoleDefinition | Format-Table -Property Name, IsCustom, Id
 
