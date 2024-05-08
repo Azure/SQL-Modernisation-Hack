@@ -1,5 +1,5 @@
 # SQL Server Modernisation Hackathon #
-This hackathon is [a repetable IP listed in Chrysalis](https://chrysalis.microsoft.com/assets/2155/) and can be used during the Execution Phase of the [VBD: Proof of Concept for Migrating your Data Estate to Azure SQL](https://chrysalis.microsoft.com/Projects/993 "VBD: Proof of Concept for Migrating your Data Estate to Azure SQL").
+This hackathon is [a repetable IP listed in Chrysalis](https://chrysalis.microsoft.com/assets/2155/) and can be used during the Execution Phase of the [VBD: Proof of Concept for Migrating your Data Estate to Azure SQL](https://chrysalis.microsoft.com/Projects/993 "VBD: Proof of Concept for Migrating your Data Estate to Azure SQL" ).
 Please refer to the “Step-By-Step Guide For Delivery” located at the bottom of the page to deliver this IP.
 
 ## Purpose of the Hackathon / Hands-on labs ##
