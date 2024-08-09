@@ -83,3 +83,5 @@ Set-AzKeyVaultSecret -VaultName $kvName -Name $secretName -SecretValue $secret
 
 $secretName = "database-watcher-password-secret"
 Set-AzKeyVaultSecret -VaultName $kvName -Name $secretName -SecretValue $adminPassword
+
+Write-Warning "DON'T FORGET to approuve the private link on SQL MI side and start the watcher"
