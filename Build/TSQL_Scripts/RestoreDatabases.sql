@@ -46,7 +46,7 @@ END
 GO
 IF NOT EXISTS (SELECT name FROM master.sys.databases WHERE name = N'TenantCRM')
 BEGIN
-    RESTORE DATABASE [TenantCRM] FROM URL = '$(StorageAccountURI)/DB_Perf/TenantCRM_perf.bak';
+    RESTORE DATABASE [TenantCRM] FROM URL = '$(StorageAccountURI)/DB_Perf/tenantCRM_Perf.bak';
     SELECT 'TenantCRM Database restored' as Output
 END
 GO

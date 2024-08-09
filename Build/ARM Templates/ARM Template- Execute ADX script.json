@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "kqlScript": {
+            "type": "String"
+        },
+        "forceUpdateTag": {
+            "defaultValue": "[utcNow()]",
+            "type": "String"
+        },
+        "continueOnErrors": {
+            "defaultValue": false,
+            "type": "bool"
+        },
+        "clusterName": {
+            "type": "String"
+        },
+        "databaseName": {
+            "type": "String",
+            "defaultValue": "sqlmonitoringdb"
+        },
+        "scriptName": {
+            "type": "String",
+            "defaultValue": "AddPermissions"
+        }
+    },
+    "variables": {
+           },
+    "resources": [
+        {
+            "type": "Microsoft.Kusto/Clusters/Databases/Scripts",
+            "apiVersion": "2022-02-01",
+            "name": "[concat(parameters('clusterName'), '/', parameters('databaseName'), '/', parameters('scriptName'))]",
+            "properties": {
+                "scriptContent": "[parameters('kqlScript')]",
+                "continueOnErrors": "[parameters('continueOnErrors')]",
+                "forceUpdateTag": "[parameters('forceUpdateTag')]"
+            }
+        }
+    ],
+    "outputs": {
+    }
+}

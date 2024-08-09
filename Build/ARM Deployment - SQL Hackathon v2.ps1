@@ -297,7 +297,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $SharedRG -TemplateUri $Templat
 $Random = Get-Random -Maximum 99999
 $Keyvault = "sqlhack-keyvault-$Random"
 If(-not (Get-AzKeyVault  -ResourceGroupName $SharedRG -ErrorVariable notPresent -ErrorAction Ignore)){
-New-AzKeyVault -Name $Keyvault  -ResourceGroupName $SharedRG -Location $Location
+New-AzKeyVault -Name $Keyvault  -ResourceGroupName $SharedRG -Location $Location -EnableRbacAuthorization -SoftDeleteRetentionInDays 2
 }
 Get-AzKeyVault -Name $Keyvault -ResourceGroupName $SharedRG -ErrorVariable notPresent -ErrorAction SilentlyContinue
 if ($notPresent) {Write-Warning "sqlhack-keyvault Failed to build. Please check and retry";return;}

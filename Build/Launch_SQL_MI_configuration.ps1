@@ -28,7 +28,7 @@ $CurrentDir = Split-Path $script:MyInvocation.MyCommand.Path
 
 $TeamRG = "SQLHACK-TEAM_VMs"
 $SharedRG ="SQLHACK-SHARED"
-$VWMName = "vm-TEAM19" #VM used to execute the configuration
+$VWMName = "vm-TEAM01" #VM used to execute the configuration
 $adminUsername="DemoUser"
 $adminPassword = Read-Host "Please enter a 16 character Password. The password must be between 16 and 128 characters in length and must contain at least one number, one non-alphanumeric character, and one upper or lower case letter" 
 

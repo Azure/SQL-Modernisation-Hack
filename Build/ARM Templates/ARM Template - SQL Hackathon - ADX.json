@@ -1,0 +1,170 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.1",
+  "parameters": {
+      "clusters_kustocluster_name": {
+          "type": "string",
+          "defaultValue": "[concat('adx-', uniqueString(resourceGroup().id))]",
+          "metadata": {
+            "description": "Name of the cluster to create"
+          }
+      },
+      "databases_kustodb_name": {
+          "type": "string",
+          "defaultValue": "sqlmonitoringdb",
+          "metadata": {
+            "description": "Name of the database to create"
+          }
+      },
+      "location": {
+        "type": "string",
+        "defaultValue": "[resourceGroup().location]",
+        "metadata": {
+          "description": "Location for all resources."
+        }
+      },
+      "db_watcher_name": {
+        "type": "string",
+        "defaultValue": "[concat('db-watcher-', uniqueString(resourceGroup().id))]",
+          "metadata": {
+            "description": "Name of the database watcher to create"
+          }
+      },
+      "sqlmiFQDN": {
+        "type": "string",
+        "defaultValue":"",
+          "metadata": {
+            "description": "Full Name of the SQLMI to use"
+          }
+      },
+      "sqlmiName": {
+        "type": "string",
+        "defaultValue":"",
+          "metadata": {
+            "description": "Name of the SQLMI to use"
+          }
+      },
+      "keyvault_name": {
+        "type": "string",
+          "metadata": {
+            "description": "Name of the key vault to use"
+          }
+      }
+      ,
+      "sqlmiDnsZone": {
+        "type": "string",
+          "metadata": {
+            "description": "SQLMI DNS Zone"
+          }
+      }  
+  },
+  "variables": {},
+  "resources": [
+              {
+                "name": "[concat(parameters('clusters_kustocluster_name'), '/', parameters('databases_kustodb_name'))]",
+                "type": "Microsoft.Kusto/clusters/databases",
+                "apiVersion": "2020-06-14",
+                "location": "[parameters('location')]",
+                "dependsOn": [
+                    "[resourceId('Microsoft.Kusto/clusters', parameters('clusters_kustocluster_name'))]"
+                ],
+                "properties": {
+                    "softDeletePeriodInDays": 90,
+                    "hotCachePeriodInDays": 10
+                }
+            },
+            {
+          "name": "[parameters('clusters_kustocluster_name')]",
+          "type": "Microsoft.Kusto/clusters",
+          "sku": {
+                "name": "Dev(No SLA)_Standard_E2a_v4",
+                "tier": "Basic",
+                "capacity": 1
+              },
+          "apiVersion": "2023-08-15",
+          "location": "[parameters('location')]",
+          "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "trustedExternalTenants": [],
+                "enableDiskEncryption": false,
+                "enableStreamingIngest": true,
+                "languageExtensions": {
+                    "value": []
+                },
+                "enablePurge": false,
+                "enableDoubleEncryption": false,
+                "engineType": "V3",
+                "acceptedAudiences": [],
+                "restrictOutboundNetworkAccess": "Disabled",
+                "allowedFqdnList": [],
+                "publicNetworkAccess": "Enabled",
+                "allowedIpRangeList": [],
+                "enableAutoStop": true,
+                "publicIPType": "IPv4"
+            }
+      },
+      {
+        "type": "Microsoft.DatabaseWatcher/watchers",
+        "apiVersion": "2023-09-01-preview",
+        "name": "[parameters('db_watcher_name')]",
+        "location": "westeurope",
+        "identity": {
+            "type": "SystemAssigned"
+        },
+        "dependsOn": [
+            "[resourceId('Microsoft.Kusto/clusters', parameters('clusters_kustocluster_name'))]"
+        ]
+        ,
+        "properties": {
+            "datastore": {
+                "adxClusterResourceId": "[resourceId('Microsoft.Kusto/clusters', parameters('clusters_kustocluster_name'))]",
+                "kustoClusterDisplayName": "[parameters('clusters_kustocluster_name')]",
+                "kustoDatabaseName": "[parameters('databases_kustodb_name')]",
+                "kustoClusterUri": "[concat('https://',parameters('clusters_kustocluster_name'),'.',parameters('location'),'.kusto.windows.net')]",
+                "kustoDataIngestionUri": "[concat('https://',parameters('clusters_kustocluster_name'),'.',parameters('location'),'.kusto.windows.net')]",
+                "kustoManagementUrl": "[concat('https://portal.azure.com/resource/subscriptions', resourceId('Microsoft.Kusto/Clusters', parameters('clusters_kustocluster_name')) ,'/overview')]",
+                "kustoOfferingType": "adx"
+            }
+        }
+    },
+        {
+            "type": "Microsoft.DatabaseWatcher/watchers/sharedPrivateLinkResources",
+            "apiVersion": "2023-09-01-preview",
+            "name": "[concat(parameters('db_watcher_name'), '/ep-watcher')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DatabaseWatcher/watchers', parameters('db_watcher_name'))]"
+            ],
+            "properties": {
+                "privateLinkResourceId": "[resourceId('Microsoft.Sql/managedInstances', parameters('sqlmiName'))]",
+                "groupId": "managedInstance",
+                "dnsZone": "[parameters('sqlmiDnsZone')]",
+                "requestMessage": "Validate PE for SQL Managed Instance"
+            }
+        },
+        {
+        "type": "Microsoft.DatabaseWatcher/watchers/targets",
+        "apiVersion": "2023-09-01-preview",
+        "name": "[concat(parameters('db_watcher_name'), '/299ca423-463e-4a08-902f-23bfce622f99')]",
+        "dependsOn": [
+            "[resourceId('Microsoft.DatabaseWatcher/watchers', parameters('db_watcher_name'))]"
+            
+        ],
+           "properties": {
+          "targetAuthenticationType": "Sql",
+          "connectionServerName": "[parameters('sqlmiFQDN')]",
+          "targetType": "SqlMi",
+          "targetVault": {
+              "akvResourceId": "[resourceId('Microsoft.KeyVault/vaults', parameters('keyvault_name'))]",
+              "akvTargetUser": "database-watcher-login-name-secret",
+              "akvTargetPassword": "database-watcher-password-secret"
+          },
+          "sqlMiResourceId": "[resourceId('Microsoft.Sql/managedInstances', parameters('sqlmiName'))]",
+          "connectionTcpPort": 1433,
+          "readIntent": false
+      }
+    }
+  ]
+}
+

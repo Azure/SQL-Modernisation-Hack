@@ -67,6 +67,12 @@ Write-Host -BackgroundColor Black -ForegroundColor Yellow "Creating jobs on Mana
 Invoke-Sqlcmd -ServerInstance $sqlmiFDQN -Database "master" -InputFile "C:\Install\TSQL_Scripts\Perf_Create_workload_jobs.sql" -Username $adminUsername -Password $adminPassword
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Complete."
 
+# set watcheruser permissions
+Write-Host -BackgroundColor Black -ForegroundColor Yellow "set Watcher User permissions on Managed Instance $sqlmiFDQN"
+$VariableArray = @("WatcherUserPassword=$adminPassword" )
+Invoke-Sqlcmd -ServerInstance $sqlmiFDQN -Database "master" -InputFile "C:\Install\TSQL_Scripts\WatcherUserPermissions.sql" -Username $adminUsername -Password $adminPassword -Variable $VariableArray
+Write-Host -BackgroundColor Black -ForegroundColor Yellow "Watcher permissions Completed."
+
 # # Restore Database SharedMasterDataDB
 # Write-Host -BackgroundColor Black -ForegroundColor Yellow "Attempting restore SharedMasterDataDB database on Managed Instance $sqlmiFDQN"
 # $blob = (Get-AzStorageBlob -Container build -Context $Context -Blob 'SharedMasterDataDB.bak').ICloudBlob.Uri.AbsoluteUri
