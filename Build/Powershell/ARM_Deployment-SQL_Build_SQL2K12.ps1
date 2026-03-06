@@ -94,7 +94,7 @@ function DownloadWithRetry([string] $url, [string] $downloadLocation, [int] $ret
     }
 }
 
-$SourcefilePath = "https://$storageAccountName.blob.core.windows.net/build/DB_SQL2K12_Build.zip$sasTokenBuildContainer"
+$SourcefilePath = "https://$storageAccountName.blob.core.windows.net/build/DB_SQL2K12_Build.zip?$sasTokenBuildContainer"
 DownloadWithRetry $SourcefilePath "$InstallPath\DB_SQL2K12_Build.zip"  10
 
 

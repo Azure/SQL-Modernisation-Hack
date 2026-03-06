@@ -59,6 +59,8 @@ if($Installed -eq "1")
     #Start-Process -file 'azuredatastudio' -arg '--install-extension "C:\Install\Downloads\sql-migration-1.0.4.vsix" --force' -wait 
     #Start-Process -file 'azuredatastudio' -arg '--install-extension "C:\Install\Downloads\managed-instance-dashboard-0.4.2.vsix" --force' -wait 
     
+    # Install Azure Data Studio
+    Start-Process -File 'C:\Install\Downloads\AzureDataStudio-Setup-1.52.0.exe' -Arg '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /MERGETASKS=!runcode' -Wait
 }
 $message="Configuration Successfull"
 Write-host  $message

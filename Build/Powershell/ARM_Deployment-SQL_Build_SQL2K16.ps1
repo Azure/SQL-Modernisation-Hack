@@ -2,7 +2,7 @@
     [string]$AdminUsername,
     [string]$AdminPassword,
     [string]$storageAccountName,
-    [string]$sasToken,
+    [string]$sasTokenBuildContainer,
     [int]$dbCount 
 )
 
@@ -70,8 +70,8 @@ function IfNotExistsCreateFolder([string] $folderPath)
 }
 
 #Set Veriables
-$InstallPath = 'D:\Install'
-$BackupPath = 'D:\Backups'
+$InstallPath = 'C:\Install'
+$BackupPath = 'C:\Backups'
 $DataPath = 'F:\Data'
 
 #Create Folders for Labs and Installs
@@ -110,7 +110,7 @@ function DownloadWithRetry([string] $url, [string] $downloadLocation, [int] $ret
     }
 }
 
-$SourcefilePath = "https://$storageAccountName.blob.core.windows.net/build/DB_SQL2K16_Build.zip$sasToken"
+$SourcefilePath = "https://$storageAccountName.blob.core.windows.net/build/DB_SQL2K16_Build.zip?$sasTokenBuildContainer"
 DownloadWithRetry $SourcefilePath "$InstallPath\DB_SQL2K16_Build.zip"  10
 
 

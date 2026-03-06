@@ -48,7 +48,7 @@
     },
     "variables": {
         "location": "[resourceGroup().location]",
-        "virtualMachineSize": "Standard_D2s_v3",
+        "virtualMachineSize": "Standard_D2s_v5",
         "jbVirtualMachineName": "vm-TEAM",
         "jbNetworkSecurityGroupName": "[concat('nsg-',variables('jbVirtualMachineName'))]",
         "jbNetworkInterfaceName": "[concat( 'nic-', variables('jbVirtualMachineName'))]",
@@ -86,8 +86,8 @@
                     },
                     "imageReference": {
                         "publisher": "MicrosoftWindowsDesktop",
-                        "offer": "Windows-10",
-                        "sku": "win10-22h2-pro-g2",
+                        "offer": "Windows-11",
+                        "sku": "win11-25h2-pro",
                         "version": "latest"
                     }
                 },
@@ -187,7 +187,7 @@
                 "publicIPAllocationMethod": "Static"
             },
             "sku": {
-                "name": "Basic"
+                "name": "Standard"
             }
       },
       {

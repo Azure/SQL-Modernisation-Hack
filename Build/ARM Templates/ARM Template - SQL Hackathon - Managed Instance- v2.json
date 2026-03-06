@@ -3075,7 +3075,10 @@
             },
             "dependsOn": [
                 "updateSubnetTemplate"
-            ]
+            ],
+            "tags": {
+                "SecurityControl": "Ignore"
+            }
         } ,
         {
             "type": "Microsoft.sql/managedInstances/providers/diagnosticSettings",

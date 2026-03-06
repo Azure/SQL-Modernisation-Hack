@@ -18,7 +18,7 @@
         "dbCount": 
         {
             "type": "int",
-            "defaultvalue": 3,
+            "defaultValue": 3,
             "metadata": {
                 "description": "Select the number of db to add."
             }
@@ -55,7 +55,7 @@
     },
     "variables": {
         "location": "[resourceGroup().location]",
-        "SQLlMachineSize": "Standard_DS3_v2",
+        "SQLlMachineSize": "Standard_D2s_v5",
         "sqlVirtualMachineName": "legacysql2012",
         "sqlNetworkSecurityGroupName": "[concat(variables('sqlVirtualMachineName'), '-nsg')]",
         "sqlNetworkInterfaceName": "[concat(variables('sqlVirtualMachineName'), '-nic')]",
@@ -71,25 +71,17 @@
         "sqlStorageWorkloadType":  "OLTP",
         "sqlStorageDisksConfigurationType": "NEW",
         "sqlStorageStartingDeviceId": 2,
-        "dataDisksLUNs": {
-            "value": [
-                0
-            ]
-        },
+        "dataDisksLUNs": [0],
         "logPath": "F:\\log",
-        "logDisksLUNs": {
-            "value": [
-                0
-            ]
-        },
-        "tempDbPath": "D:\\tempDb",
+        "logDisksLUNs": [0],
+        "tempDbPath": "F:\\tempDb",
+        "tempDbDisksLUNs": [0],
         "dataFileCount":  2,
-        "dataFileSize":8        ,
-        "dataGrowth":64,
-        "logFileSize":  8,
+        "dataFileSize": 8,
+        "dataGrowth": 64,
+        "logFileSize": 8,
         "logGrowth": 64,
-        "SQLSystemDbOnDataDisk":  false
-        
+        "SQLSystemDbOnDataDisk": false    
     },
     "resources": [
         {
@@ -123,7 +115,7 @@
             "apiVersion": "2022-03-02",
             "location": "[variables('location')]",
              "properties": {
-                        "diskSizeGB": 64,
+                        "diskSizeGB": 128,
                         "creationData": {
                             "createOption": "empty"
                         }
@@ -138,7 +130,8 @@
             "apiVersion": "2019-03-01",
             "location": "[variables('location')]",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkInterfaces/', variables('sqlNetworkInterfaceName'))]"
+                "[concat('Microsoft.Network/networkInterfaces/', variables('sqlNetworkInterfaceName'))]",
+                "[resourceId('Microsoft.Compute/disks', concat(variables('sqlVirtualMachineName'), '-DataDisk_0'))]"
             ],
             "properties": {
                 "hardwareProfile": {
@@ -162,7 +155,7 @@
                         {
                         "lun": 0,
                         "createOption": "attach",
-                         "caching": "ReadOnly",
+                        "caching": "None",
                         "writeAcceleratorEnabled": false,
                         "name": "[concat(variables('sqlVirtualMachineName'), '-DataDisk_0')]",
                         "managedDisk": {
@@ -251,14 +244,15 @@
                     "StorageWorkloadType": "[variables('sqlStorageWorkloadType')]",
                   
                     "SQLDataSettings": {
-                        "LUNs": [0],
+                        "LUNs": "[variables('dataDisksLUNs')]",
                         "DefaultFilePath": "[variables('dataPath')]"
                     },
                     "SQLLogSettings": {
-                        "LUNs": [0],
+                        "LUNs": "[variables('logDisksLUNs')]",
                         "DefaultFilePath": "[variables('logPath')]"
                     },
                     "SQLTempDbSettings": {
+                        "LUNs": "[variables('tempDbDisksLUNs')]",
                         "DefaultFilePath": "[variables('tempDbPath')]",
                         "DataFileCount": "[variables('dataFileCount')]",
                         "DataFileSize": "[variables('dataFileSize')]",
@@ -291,7 +285,7 @@
                     "timestamp":123456783                                             
                 },
                 "protectedSettings": {
-                    "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('sqlCustomScriptFileName'), ' -AdminUsername ', parameters('adminUsername'),' -AdminPassword ', parameters('adminPassword'),' -storageAccountName ',parameters('storageAccount'),' -sasTokenBuildContainer ', parameters('sasTokenBuildContainer'),' -sasTokenMigrationContainer ', parameters('sasTokenMigrationContainer'),' -dbCount ', parameters('dbCount'))]" ,
+                    "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('sqlCustomScriptFileName'), ' -AdminUsername \"', parameters('adminUsername'), '\" -AdminPassword \"', parameters('adminPassword'), '\" -storageAccountName \"', parameters('storageAccount'), '\" -sasTokenBuildContainer \"', parameters('sasTokenBuildContainer'), '\" -sasTokenMigrationContainer \"', parameters('sasTokenMigrationContainer'), '\" -dbCount ', parameters('dbCount'))]",
                     "storageAccountName": "[parameters('storageAccount')]",
                     "storageAccountKey": "[Concat(listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccount')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value)]",
                     "fileUris": [

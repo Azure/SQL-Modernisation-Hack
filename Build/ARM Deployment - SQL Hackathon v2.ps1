@@ -22,8 +22,9 @@ Select-AzSubscription -Tenant '<Tenant ID>' -SubscriptionId '<Subscription ID>'
 
 #NOW RUN THE ENTIRE PS SCRIPT COMPLETING REQUESTED PARAMTERS AS PROMPTED.
 #>
-#Select-AzSubscription -Tenant '72f988bf-86f1-41af-91ab-2d7cd011db47' -SubscriptionId 'ab6dbbb5-ff85-4692-a99c-490f66eed14a'
-#Select-AzSubscription -Tenant '4fc9c688-ad9c-4d58-85c7-d141d4989ac2' -SubscriptionId 'cfdd59e1-0a35-4577-a19b-6d6a44bcf2c4'
+
+# Debug Settings: Uncomment better see inner errors of template validations
+# $PSDefaultParameterValues['New-AzResourceGroupDeployment:Debug']   = $true
 
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "#################################################################################"
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "SQL Server Migration Hack Build Script"
@@ -37,7 +38,20 @@ If(-not(Get-InstalledModule Az -ErrorAction silentlycontinue)){
     Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force -AllowClobber
 }
 
+# Ensure ThreadJob module is available for PS 5.1 compatibility
+if (-not (Get-Command Start-ThreadJob -ErrorAction SilentlyContinue)) {
+    try {
+        Install-Module ThreadJob -Scope CurrentUser -Force -AllowClobber -ErrorAction Stop
+    } catch {
+        Write-Warning ("ThreadJob install failed: {0}" -f $_.Exception.Message)
+    }
 
+    try {
+        Import-Module ThreadJob -ErrorAction Stop
+    } catch {
+        Write-Warning ("ThreadJob import failed: {0}" -f $_.Exception.Message)
+    }
+}
 
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Setting Enviroment Variables....................................................."
 $subscriptionID = (Get-AzContext).Subscription.id
@@ -68,9 +82,9 @@ if (($TeamVMCount = Read-Host "Please enter the number of Team VM's required (1-
 
 # }
 
-$DefaultValue = "WestEurope"
+$DefaultValue = "SwedenCentral"
 if (($Location = Read-Host "Please enter the Location of the Resource Groups. (default value: $DefaultValue)") -eq '') {$Location = $DefaultValue}
-If (“NorthEurope”,”WestEurope”,”UKSouth”, "UKWest", "WestUS", "EastUS" -NotContains $Location  ) {Write-Warning "Unrecognised location. Setting to Default $DefaultValue" ; $Location = "NorthEurope"}
+If (“NorthEurope”,”WestEurope”,”UKSouth”, "UKWest", "WestUS", "EastUS", "GermanyWestCentral", "SwedenCentral" -NotContains $Location  ) {Write-Warning "Unrecognised location. Setting to Default $DefaultValue" ; $Location = "NorthEurope"}
 
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "##################### IMPORTANT: MAKE A NOTE OF THE FOLLOWING USERNAME and PASSWORD ########################"
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "The username and password specified next, will be used to credentials to SQL, Managed Instance and any VM's"
@@ -229,6 +243,7 @@ DownloadWithRetry "https://go.microsoft.com/fwlink/?LinkId=708343" "$CopyPath\St
 DownloadWithRetry "https://download.visualstudio.microsoft.com/download/pr/3f56df9d-6dc0-4897-a49b-ea891f9ad0f4/076e353a29908c70e24ba8b8d0daefb8/windowsdesktop-runtime-3.1.21-win-x64.exe" "$CopyPath\windowsdesktop-runtime-3.1.21-win-x64.exe" 10
 DownloadWithRetry "https://go.microsoft.com/fwlink/?linkid=2133900" "$CopyPath\sql-assessment-0.6.3.vsix" 10
 DownloadWithRetry "https://go.microsoft.com/fwlink/?linkid=2099770" "$CopyPath\managed-instance-dashboard-0.4.2.vsix" 10
+DownloadWithRetry "https://go.microsoft.com/fwlink/?linkid=2324716" "$CopyPath\AzureDataStudio-Setup-1.52.0.exe" 10
 
 
 $SourcePath= (Join-Path $CurrentDir "DB_SSIS_Build\")
@@ -273,12 +288,27 @@ $filesToUpload = Get-ChildItem -File -Recurse -Path $sourceRootPath
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Creating legacySQL2012 Server................................................."
 
 $TemplateUri = (Join-Path $CurrentDir "ARM Templates\ARM Template - SQL Hackathon - SQL2k12.json")
-New-AzResourceGroupDeployment -ResourceGroupName $SharedRG -TemplateUri $TemplateUri -adminPassword $adminpassword -adminUsername $adminUsername -storageAccount $StorageAccount -sasTokenBuildContainer $JsonSASUriContainerBuild -sasTokenMigrationContainer $Key0 -Name "LegacySQL2012" -dbCount $TeamVMCount  -AsJob 
+New-AzResourceGroupDeployment -ResourceGroupName $SharedRG -TemplateUri $TemplateUri -adminPassword $adminpassword -adminUsername $adminUsername -storageAccount $StorageAccount -sasTokenBuildContainer $SASUriContainerBuild -sasTokenMigrationContainer $Key0 -Name "LegacySQL2012" -dbCount $TeamVMCount -AsJob 
 
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Creating legacySQL2016 Server................................................."
 
+Write-Host "================ PARAMETERS USED FOR DEPLOYMENT ================" -ForegroundColor Cyan
+ 
+Write-Host "TemplateUri:              $TemplateUri"
+Write-Host "ResourceGroup:            $SharedRG"
+ 
+Write-Host "adminUsername:            $adminUsername"
+Write-Host "adminPassword:            [securestring: $($adminPassword.Length) chars]"  # safe mask
+ 
+Write-Host "storageAccount:           $StorageAccount"
+ 
+Write-Host "sasTokenBuildContainer:   $SASUriContainerBuild"
+ 
+Write-Host "dbCount:                  $TeamVMCount"
+ 
+Write-Host "================================================================" -ForegroundColor Cyan
 $TemplateUri = (Join-Path $CurrentDir "ARM Templates\ARM Template - SQL Hackathon - SQL2K16.json")
-New-AzResourceGroupDeployment -ResourceGroupName $SharedRG -TemplateUri $TemplateUri  -adminPassword $adminpassword -adminUsername $adminUsername -storageAccount $StorageAccount -sasToken $JsonSASUriContainerBuild -Name "LegacySQL2K16" -dbCount $TeamVMCount  #-AsJob 
+New-AzResourceGroupDeployment -ResourceGroupName $SharedRG -TemplateUri $TemplateUri  -adminPassword $adminpassword -adminUsername $adminUsername -storageAccount $StorageAccount -sasTokenBuildContainer $SASUriContainerBuild -Name "LegacySQL2K16" -dbCount $TeamVMCount  #-AsJob 
 
 Restart-AzVM -ResourceGroupName  $SharedRG -Name legacysql2016
 Write-host "legacysql2016 restarted "
@@ -319,11 +349,27 @@ $TemplateUri = (Join-Path $CurrentDir "ARM Templates\ARM Template - SQL Hackatho
 
 New-AzResourceGroupDeployment -ResourceGroupName $TeamRG -TemplateUri $TemplateUri -Name "TeamVMBuild" -vmCount $TeamVMCount -SharedResourceGroup $SharedRG -SASURIKey $JsonSASUriContainerBuild -StorageAccount $StorageAccount -adminPassword $adminpassword -adminUsername $adminUsername 
 $AzureVMsRunning = Get-AzVM -ResourceGroupName $TeamRG -status | Where-Object {$_.PowerState -eq "VM running"}
-$AzureVMsRunning | ForEach-Object -ThrottleLimit 22 -Parallel{
 
-    Restart-AzVM -ResourceGroupName $_.ResourceGroupName -Name $_.Name
-    Write-host "$($_.Name) restarted "
+# Manual throttling to 22 concurrent thread jobs
+$throttle = 22
+$jobs = @()
+foreach ($vm in $AzureVMsRunning) {
+    $rg = $vm.ResourceGroupName
+    $name = $vm.Name
+    while (($jobs | Where-Object State -eq 'Running').Count -ge $throttle) {
+        Start-Sleep -Milliseconds 300
+    }
+    $job = Start-ThreadJob -Name "Restart-$name" -ScriptBlock {
+        param($rg, $name)
+        Restart-AzVM -ResourceGroupName $rg -Name $name
+        "$name restarted"
+    } -ArgumentList $rg, $name
+    $jobs += $job
 }
+Wait-Job -Job $jobs | Out-Null
+Receive-Job -Job $jobs | ForEach-Object { Write-Host $_ }
+Remove-Job -Job $jobs
+
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Waiting for 3 minutes ........................................................."
 start-sleep -s 180
 Get-AzVM -ResourceGroupName $TeamRG -status | Where-Object {$_.PowerState -eq "VM running"} |Format-Table -Property  Name, PowerState
@@ -335,27 +381,59 @@ $ScriptPath= (Join-Path $CurrentDir $Script)
 [string]$Installed = "1" # 1 to install tool and labs,  0 for labs only
 $VMs = Get-AzVM -ResourceGroupName $TeamRG #-ResourceType Microsoft.Compute/virtualMachines
 
-$VMs | ForEach-Object -ThrottleLimit 22 -Parallel {
-    $RG = $_.ResourceGroupName
-    $VMName= $_.Name
-    $Message = "$(get-date -Format 'dd/MM/yyyy hh:mm:ss'): $VMName -- Configuration starting..."
-    write-host $Message
-    $out = Invoke-AzVMRunCommand -ResourceGroupName $RG -Name $VMName -CommandId RunPowerShellScript -ScriptPath $using:ScriptPath -Parameter @{StorageAccount = $using:StorageAccount; SASURIKey = $using:JsonSASUriContainerBuild; Installed = $using:Installed}
-    #Formating the Output with the VM name
-    if($out.value[1].Message)
-    {
-        $status= "failed" 
-        $ForegroundColor="Red"
-        $message = $out.value[1].Message
+$jobs = @()
+foreach ($vm in $VMs) {
+    $RG = $vm.ResourceGroupName
+    $VMName = $vm.Name
+    $Message = "$(Get-Date -Format 'dd/MM/yyyy hh:mm:ss'): $VMName -- Configuration starting..."
+    Write-Host $Message
+
+    $jobs = $jobs | Where-Object { $_.State -eq 'Running' }
+    while ($jobs.Count -ge $throttle) {
+        Start-Sleep -Milliseconds 300
+        $jobs = $jobs | Where-Object { $_.State -eq 'Running' }
     }
-    else {
-        $status= "successfull"
-        $ForegroundColor="White"
-        $message = ""
-    }
-    $output =  "$(get-date -Format 'dd/MM/yyyy hh:mm:ss'): $VMName -- status: $status " + $message
-    Write-host $output - -ForegroundColor  $ForegroundColor
+
+    $job = Start-ThreadJob -Name "Config-$VMName" -ScriptBlock {
+        param($rg, $vmName, $scriptPath, $storageAccount, $sasJson, $installed)
+        try {
+            $out = Invoke-AzVMRunCommand `
+                -ResourceGroupName $rg `
+                -Name $vmName `
+                -CommandId RunPowerShellScript `
+                -ScriptPath $scriptPath `
+                -Parameter @{
+                    StorageAccount = $storageAccount
+                    SASURIKey      = $sasJson
+                    Installed      = $installed
+                }
+
+            if ($out -and $out.Value -and $out.Value.Count -gt 1 -and $out.Value[1].Message) {
+                $status = "failed"
+                $ForegroundColor = "Red"
+                $message = $out.Value[1].Message
+            } else {
+                $status = "successfull"
+                $ForegroundColor = "White"
+                $message = ""
+            }
+        } catch {
+            $status = "failed"
+            $ForegroundColor = "Red"
+            $message = $_.Exception.Message
+        }
+
+        if (-not $message) { $message = "" }
+        $output = "$(Get-Date -Format 'dd/MM/yyyy hh:mm:ss'): $vmName -- status: $status " + $message
+        [pscustomobject]@{ Line = $output; Color = $ForegroundColor }
+    } -ArgumentList $RG, $VMName, $ScriptPath, $StorageAccount, $JsonSASUriContainerBuild, $Installed
+
+    $jobs += $job
 }
+
+Wait-Job -Job $jobs | Out-Null
+Receive-Job -Job $jobs | ForEach-Object { Write-Host $_.Line -ForegroundColor $_.Color }
+Remove-Job -Job $jobs
 
 
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Enviroment Build in progress. Please check RG deployments for errors."
@@ -363,6 +441,4 @@ Write-Host -BackgroundColor Black -ForegroundColor Yellow "Enviroment Build in p
 Write-Warning "NOTE: THE FOLLOWING POST BUILD TASKS ARE REQUIRED."
 Write-Warning "1. DataFactory Build Ok. You will need to start the SSIS integration runtime and enable AHUB"
 Write-Warning "2. Restore databases for SSIS + Monitoring labs by running the Launch_SQL_MI_configuration.ps1. Choose a remote TEAM VM. Note: Only run once."
-Write-Warning "3. All labs and documaention can be found on TEAMVM's in C:\_SQLHACK_\LABS"
-
-
+Write-Warning "3. All labs and documention can be found on TEAMVM's in C:\_SQLHACK_\LABS"
