@@ -67,7 +67,7 @@ In order to deliver this hackathon, you can apply for a One-Time PASS subscripti
 
 
 ## Step-By-Step Guide For Delivery ##
-- **Position the VBD** at your account and follow the necessary steps on ESXP as you would do for any other delivery. Details regarding time booking and best practices for the delivery have been given in the FaQ section below.
+- **Search the VBD** in your ESXP account and follow the necessary steps you do for any other delivery. Details regarding time booking and best practices for the delivery have been given in the FaQ section below.
 
 - **Identify a peer CSA** who will act as the second coach.
 
@@ -101,18 +101,18 @@ If you are allowed to use a customer subscription, you need to make sure that al
 
     ->Automatically create users and grant permissions by running the CreateAdUsersAndPermissions.ps1 that is in the BUILD folder.
 
-- **Make a Dry Run** for each Lab you want to deliver at least 2 days before the actual delivery
+- **Do a Dry Run** for each Lab you want to deliver at least 2 days before the actual delivery
     
 - **Synch. with your CSA peer** before the delivery
 
-- **Deliver the hackathon**.  You can use the [presentation](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/Presentations/FY24_Azure%20SQL%20Modernization%20Hackathon.pptx) as a reference and a good starting point. All instructions are for the Labs are already given in the Lab docs uploaded to User VM's.  
+- **Deliver the hackathon**.  You can use the [presentation](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/Presentations/FY24_Azure%20SQL%20Modernization%20Hackathon.pptx) as a reference and a good starting point. All instructions for the Labs are already given in the Lab docs uploaded to User VM's.  
 
 - **Clean-up resources** as described in the [detailed description for the provisioning](https://github.com/Azure/SQL-Modernisation-Hack/blob/main/Hack%20Environment%20-%20Setup%20and%20Reset%20MASTER.docx)
 
  
  ***NOTE This repository will install a number of components within the designated subscription at an estimated cost of around $25 per day***
 
- If you use a PASS subscription for the delviery and encounter any quota limitations in the PASS subscription for the resources you need to provision, you can raise these quotas automatically with a ticket from within the Azure Portal under "Help + Support". This usally takes a couple of minutes and runs in the self-service mode. 
+ If you use a PASS subscription for the delivery and encounter any quota limitations in the PASS subscription for the resources you need to provision, you can raise these quotas automatically with a ticket from within the Azure Portal under "Help + Support". This usally takes a couple of minutes and runs in the self-service mode. 
 
  (For any questions regarding provisioning and preparation you can reach out to [the owners of this IP](https://chrysalis.microsoft.com/assets/2155/))  
 
@@ -127,13 +127,13 @@ If you cannot / don't prefer to use the customer's subscription for the delivery
 
 2.Fill in the forms with the details (like PC 'Profit Center' Code, PC Program Approver Alias, Finance contract, etc. which are mandartory fields. Reach out to your finance contact in your region if you don't know these details. If you see any changes later on the input fields of the form or if you face rejection after your request: 
 ->A.  if it is related to finance related issues, reach out to your finance contact 
-->B.  if it is due to some other reason, escalate it over regional BG team.
+->B.  if it is due to some other reason, escalate it to regional BG team.
     
 3.Create a new tenant using [Microsoft Customer Digital Experiences](https://cdx.transform.microsoft.com/my-tenants) to be used in your Hackathon.
 
 4.Redeem the Promo Code that you will get after confirmation of your One-Time PASS request by following the instructions in the confirmation e-mail. Associate this Promo Code with the newly created tenant for the Hackathon in the previous step. (The assosiation will be done automatically when you fill in the form while redeeming the Promo Code for the PASS. You just need to provide the information for the new tenant.)
 
-5.Check your balance on [Microsoft Azure Sponsorships | Balance](https://www.microsoftazuresponsorships.com/Balance) from time to time in that you sign in with the admin and pass from the tenant created in the 3rd step.
+5.Check your balance on [Microsoft Azure Sponsorships | Balance](https://www.microsoftazuresponsorships.com/Balance) from time to time.Sign in with the admin and pass from the tenant created in the 3rd step.
 
 
 ## Potential Value of this Repetable IP ##
@@ -152,10 +152,10 @@ If you cannot / don't prefer to use the customer's subscription for the delivery
 
 
 
- ## FaQ ##
+ ## FAQs ##
 ***Q*** : What is the format of this hackathon ?
 
-***A*** This is slightly different than official Microsoft Hackathons in that participants are following a step-by-step guides for each lab. Each part of the hackathion consists of a short theretical part followed by a practiocal Hands-On Lab. This hackathon can be delivered both on-site and online and can be dedicated to one specific customer or be delivered as a multicustomer event.
+***A*** This is slightly different than official Microsoft Hackathons in that participants are following a step-by-step guides for each lab. Each part of the hackathon consists of a short theretical part followed by a practical Hands-On Lab. This hackathon can be delivered both on-site and online and can be dedicated to one specific customer or be delivered as a multicustomer event.
 
 ***Q*** : How many coaches are recommended ?
 
